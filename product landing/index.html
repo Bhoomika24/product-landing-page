@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Marvel Collectables Landing Page</title>
+    <style>
+        
+        @import url('https://googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+        *
+        {
+            margin:0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+
+        }
+        section
+        {
+            position: relative;
+            width:100%;
+            min-height: 100;
+            padding: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #fff;
+        }
+        header
+        {
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 100%;
+            padding: 20px 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header .logo
+        {
+            position: relative;
+            max-width: 80px;
+        }
+        header ul
+        {
+            position: relative;
+            display: flex;
+        }
+        header ul li
+        {
+            list-style: none;
+        }
+        header ul li a
+        {
+            display: inline-block;
+            color: #333;
+            font-weight: 400;
+            margin-left:40px;
+            text-decoration: none;
+        }
+        .content
+        {
+            position: relative;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .content .textBox
+        {
+            position: relative;
+            max-width: 600px;
+        }
+        .content .textBox h2
+        {
+            color: #333;
+            font-size: 3em;
+            line-height: 1.4em;
+            font-weight: 500;
+        }
+        .content .textBox h2 span
+        {
+            color: #ec1d24;
+            font-size: 1.2em;
+            font-weight: 700;
+        }
+        .content .textBox p
+        {
+            color: #333;
+        }
+        .content .textBox a 
+        {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 8px 20px;
+            background: #ec1d24;
+            color: #fff;
+            border-radius: 40px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+        .content .imgBox
+        {
+            width: 600px;
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 50px;
+            margin-top: 50px;
+        }
+        .content .imgBox ironman
+        {
+            max-width: 340px;
+        }
+        .thumb
+        {
+            position: absolute;
+            right:25%;
+            bottom: 10px;
+            transform: translateX(-50%);
+            display: flex;
+        }
+        .thumb li
+        {
+            list-style: none;
+            display: inline-block;
+            margin:0 10px;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        .thumb li:hover
+        {
+            transform: translateY(-15px);
+        }
+        .sci
+        {
+            position:absolute;
+            top: 50%;
+            right: 1%;
+            transform: translateY(-50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+        }
+        .sci li
+        {
+            list-style: none;
+        }
+        .sci li a
+        {
+            display: inline-block;
+            margin: 5px 0;
+            transform: scale(0.6);
+        }
+        .circle
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #ec1d24;
+            clip-path: circle(600px at right 800px);
+        }
+
+    </style>
+</head>
+<body>
+    <section>
+        <div class="circle"></div>
+        <header>
+            <a href="#" ><img src="logo1.png" class="logo"></a>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Collections</a></li>
+                <li><a href="#">What's New</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+    </header>
+    <div class="content">
+        <div class="textBox">
+            <h2>Marvelous Fantasy World Awaits!<br>They're not just a <span>Comic Book Characters</span></h2>
+            <p><br>Marvel is one of the most recognizable names in the comic world.Thanks to the superheroes like Iron Man, Captain America, Thor, Hulk, Spider-Man, Black Panter exist, in addition to group like the X-men, Guardians of the Galaxy and The Avengers.</p>
+            <a href="#">Learn More</a>
+            </div>
+            <div class="imgBox">
+                <img src="ironman.png" class="ironman" width="350px">
+            </div>
+        </div>
+        <ul class="thumb">
+            <li><img src="iron.png" width="100px" onclick="imgSlider('ironman.png');changeCircleColor('#ec1d24')"></li>
+            <li><img src="america.png" width="90px" onclick="imgSlider('captain.png');changeCircleColor('#002d5c')"></li>
+            <li><img src="dr.png" width="100px" onclick="imgSlider('dr strange.png');changeCircleColor('#ffa700')"></li>
+            <li><img src="thor.png" width="100px" onclick="imgSlider('thor.png');changeCircleColor('#333')"></li>
+            <li><img src="hulk2.png" width="100px" onclick="imgSlider('hulk.png');changeCircleColor('#9dc063')"></li>
+        </ul>
+        <ul class="sci">
+            <li><a href="#"> <img src="face.png" width="65px"></a></li>
+            <li><a href="#"> <img src="instagram-alt-logo-24.png" width="60px"></a></li>
+            <li><a href="#"> <img src="twitter.png" width="55px"></a></li>
+        </ul>
+    </section>
+
+    <script type="text/javascript">
+        function imgSlider(anything)
+        {
+            document.querySelector('.ironman').src = anything;
+        }
+        function changeCircleColor(color)
+        {
+            const circle = document.querySelector('.circle');
+            circle.style.background = color;
+        }
+    </script>
+</body>
+</html>
